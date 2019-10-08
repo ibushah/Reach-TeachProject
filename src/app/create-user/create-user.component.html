@@ -1,0 +1,60 @@
+<p-toast></p-toast>
+<p-dialog [style]="{width:'600px'}" [modal]="true" [responsive]="true" [baseZIndex]="10000" [closeOnEscape]="true"
+    [closable]="true" [(visible)]="display">
+
+    <div class="ui-g-12">
+
+
+        <p-card header="Enter the Email you wish to register!" [style]="{
+        width: '100%',
+        'font-size': '20px',
+
+        'text-align': 'center'
+      }">
+            <div class="ui-g ui-fluid">
+                <hr style="height:2px;width:100%;background-color:black;" />
+                <form style="width:100%;" #myForm="ngForm" (ngSubmit)="submit(); myForm.reset()">
+                    <div class="ui-g">
+
+                        <div class="ui-md-12 ui-lg-12 ui-sm-12">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon" [ngStyle]="{height:'40px'}"
+                                    style="width:100px;font-size:15px;">Email<i style="color: red">*</i></span> <input
+                                    type="text" name="email" [ngStyle]="{height:'40px'}" autocomplete="off"
+                                    [(ngModel)]="email" required pInputText />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="ui-g">
+                        <div class="ui-g-12">
+                            <p-checkbox name="checkbox" [(ngModel)]="value" binary="true"></p-checkbox>
+                            <p style="display:inline;;font-size:18px"> Administrator</p>
+                        </div>
+                    </div>
+                    <div class="ui-g" style="width:100%">
+                        <div *ngIf="loader" style="width:100%" class="loading-indicator">
+                            <p-progressSpinner ></p-progressSpinner>
+                        </div>
+
+                        <div class="ui-lg-12 ui-g-12 ui-md-12 ui-sm-12 ">
+                            <button pButton type="submit" label="Create" [disabled]="myForm.invalid"
+                                class="ui-button-raised ui-button-info" style="width:100%;">
+
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <p-toast></p-toast>
+                </form>
+            </div>
+        </p-card>
+    </div>
+
+
+</p-dialog>
+
+<p style="cursor: pointer;text-align: right;font-size: 16px;color: rgb(51, 50, 50);"> <span (click)="showDialog()"
+        style="cursor: pointer"> <img style="position: relative;top:5px;" src="../../assets/add.png"> New User</span>
+</p>

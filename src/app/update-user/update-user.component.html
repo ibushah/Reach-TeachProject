@@ -1,0 +1,52 @@
+<p-toast></p-toast>
+<p-dialog [style]="{width:'600px'}" [modal]="true" [responsive]="true" [baseZIndex]="10000" [closeOnEscape]="true"
+[closable]="true" [(visible)]="display">
+
+<div class="ui-g-12">
+
+
+    <p-card header="Modify the users Role!" [style]="{
+    width: '100%',
+    'font-size': '20px',
+   
+    'text-align': 'center'
+  }">
+        <div class="ui-g ui-fluid">
+            <hr style="height:2px;width:100%;background-color:black;" />
+            <form style="width:100%;" #myForm="ngForm" (ngSubmit)=" submit()">
+                <div class="ui-g">
+
+                    <div class="ui-md-12 ui-lg-12 ui-sm-12">
+                        <p>{{this.user}}</p>
+
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <p-checkbox name="checkbox" [(ngModel)]="value" binary="true"></p-checkbox>
+                        <p style="display:inline;;font-size:18px"> Administrator</p>
+                    </div>
+                </div>
+                <div class="ui-g">
+
+
+                    <div class="ui-lg-12 ui-g-12 ui-md-12 ui-sm-12 ">
+                        <button  pButton type="submit" label="Save"
+                            [disabled]="myForm.invalid" class="ui-button-raised ui-button-info"
+                            style="width:100%;">
+
+                        </button>
+                    </div>
+                </div>
+
+
+
+            </form>
+        </div>
+    </p-card>
+</div>
+
+
+</p-dialog>
+<img (click)="showDialog()" style="cursor: pointer;margin-right:10px"
+src="../../assets/edit.png">

@@ -1,0 +1,15 @@
+/* 
+
+*
+{
+    margin:0px;
+    padding: 0px;
+
+} */
+
+.mark{
+    background-color: transparent;
+}
+.mark:hover{
+    color: rgb(230, 25, 25);
+}
