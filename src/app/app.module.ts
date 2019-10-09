@@ -33,6 +33,9 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { FrontComponent } from './front/front.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     ChangpasswordComponent,
     CreateUserComponent,
     UpdateUserComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent,
+    FrontComponent,
+    SignupComponent
 
   ],
   imports: [
