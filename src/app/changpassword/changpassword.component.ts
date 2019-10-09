@@ -2,7 +2,8 @@ import { MessageService } from "primeng/api";
 import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute } from "@angular/router";
-import {AuthService} from '../services/auth.service'
+import { AuthService } from '../services/auth.service'
+import { TouchSequence } from 'selenium-webdriver';
 
 
 @Component({
@@ -14,44 +15,61 @@ export class ChangpasswordComponent implements OnInit {
 
   dropItems;
   user;
-  constructor(private router: Router,private service:AuthService,private messageSerivce:MessageService) { }
+  token;
+  showForm = false;
+  constructor(private router: Router, private service: AuthService, private messageSerivce: MessageService, private activateRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.user=this.getUser();
-   this.getUsertypeNload();
+    this.token = this.activateRoute.snapshot.params['token'];
+    this.tokenChecker();
+
+    //   this.user=this.getUser();
+    //  this.getUsertypeNload();
   }
 
-  dropdownchange(e)
-  {
+  dropdownchange(e) {
     console.log(e)
-    if(e.value==="manageAccounts")
-    this.router.navigate(['/manageaccounts']);
-    else if(e.value==="logout")
-    this.router.navigate(['/']);
+    if (e.value === "manageAccounts")
+      this.router.navigate(['/manageaccounts']);
+    else if (e.value === "logout")
+      this.router.navigate(['/']);
 
   }
-  routeToMain()
-  {
+  routeToMain() {
     this.router.navigate([''])
   }
 
-  submit(obj)
-  {
-    this.service.changePassword(obj).subscribe((response)=>
-    {
-      this.messageSerivce.add({severity:'info',summary:'Successful',detail:response});
-    },error => {
+  tokenChecker() {
+    this.service.tokenChecker(this.token).subscribe((response) => {
+      this.showForm = true;
+    },
+      error => {
+      this.showForm = false
       console.log(error)
-      this.messageSerivce.add({ severity:'error', summary:'Failed', detail:error.error });
-    });
+    })
   }
-  routeToMainComponent()
-  {
+
+  submit(obj) {
+    if (this.token) {
+
+
+      this.service.changePassword(this.token, obj).subscribe((response) => {
+        this.messageSerivce.add({ severity: 'info', summary: 'Successful', detail: response });
+        console.log(response)
+      }, error => {
+        console.log(error)
+        this.messageSerivce.add({ severity: 'error', summary: 'Failed', detail: error.error });
+      });
+    }
+    else {
+      this.messageSerivce.add({ severity: 'error', summary: 'Failed', detail: "Inavalid token" });
+    }
+  }
+  routeToMainComponent() {
     this.router.navigate(['/main'])
   }
-  getUser()
-  {
-   return sessionStorage.getItem("user");
+  getUser() {
+    return sessionStorage.getItem("user");
   }
   getUsertypeNload() {
     let userType = sessionStorage.getItem("userType");

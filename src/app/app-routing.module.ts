@@ -12,7 +12,8 @@ const routes: Routes = [
 
   {path:'forgotpassword', component:ForgotpasswordComponent},
 
-  {path:'changepassword',  canActivate: [AuthGuard],component:ChangpasswordComponent}
+  {path:'changepassword/:token',component:ChangpasswordComponent},
+  
 
 ];
 
