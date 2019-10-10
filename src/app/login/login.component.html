@@ -57,67 +57,76 @@
 </div> -->
 
 
-
-
-
-<p>login-a works!</p>
-<div class="div-adjust" style="margin-top:150px;">
-<div class="ui-g">
-    <div class="ui-g-3 ui-lg-3 ui-md-4 ui-sm-12 ui-lg-offset-4">
-        <p-card>
-            <div class="form">
-         <div class="ui-g">
-
-             <div class="ui-g-4">
-                <p><b>Accounts</b></p>
-             </div>
-             
-
-         </div>
-
-         <div class="ui-g">
-                <div class="ui-g-10 ui-l-10 ui-m-10 ui-s-10">
-                        <input type="text" style="Width:100%; border:1px solid; border-radius: 3px;" size="30" placeholder="Enter Your Username or Email" pInputText [(ngModel)]="property"/>
-                </div>
-    
-         </div>
-
-         <div class="ui-g">
-
-                <div class="ui-g-4">
-                   <p><b>Password</b></p>
-                </div>
-                
-   
-            </div>
-   
-            <div class="ui-g">
-                   <div class="ui-g-10 ui-l-10 ui-m-10 ui-s-10">
-                           <input type="password" style="Width:100%;border:1px solid; border-radius: 3px;" placeholder="Enter Your Password" pInputText [(ngModel)]="property"/>
-                   </div>
-       
-            </div>
-            <div class="ui-g">
-                    <div class="ui-g-10 ui-l-10 ui-m-10 ui-s-10">
-                            <button pButton style="width:100%;border-radius: 3px;" type="button" label="Login" class="ui-button-info"></button>
-                    </div>
-
-                    <div class="ui-g">
-
-                            <div class="ui-g-12">
-                               <p><a>Lost your password?</a></p>
-                            </div>
-                            <div class="ui-g-12">
-                                <p><a>Don't have an account? Sign up now</a></p>
-                             </div>
-                             
-                            
-               
-                        </div>
-        
-             </div>
-            </div>
-        </p-card>
-    </div>
+<p-toast></p-toast>
+<div class="ui-g" style="margin-top: 60px;width: 100%">
+  <div class="ui-g-12">
+    <img style="margin-left:46%;width:70px" src="../../assets/reach.PNG">
+  </div>
 </div>
+
+<div class="div-adjust" style="margin-top:30px;">
+  <form class="ui-g" #myForm="ngForm" (ngSubmit)="login(myForm.value)">
+    <div class="ui-g-3 ui-lg-4 ui-md-6 ui-sm-10 ui-sm-offset-1 ui-lg-offset-4 ui-md-offset-3">
+      <p-card>
+        <div class="form">
+
+
+          <div class="ui-g">
+
+            <div class="ui-g-4">
+              <p><b>Accounts</b></p>
+            </div>
+
+
+          </div>
+
+          <div class="ui-g">
+            <div class="ui-g-10 ui-lg-10 ui-md-10 ui-sm-10">
+              <input type="text" style="Width:100%; border:1px solid; border-radius: 3px;" size="30"
+                placeholder="Enter Your Username or Email" required name="email" pInputText [(ngModel)]="email" />
+            </div>
+
+          </div>
+
+          <div class="ui-g">
+
+            <div class="ui-g-4">
+              <p><b>Password</b></p>
+            </div>
+
+
+          </div>
+
+          <div class="ui-g">
+            <div class="ui-g-10 ui-l-10 ui-m-10 ui-s-10">
+              <input type="password" style="Width:100%;border:1px solid; border-radius: 3px;"
+                placeholder="Enter Your Password" required name="password" pInputText [(ngModel)]="password" />
+            </div>
+
+          </div>
+          <div class="ui-g">
+            <div class="ui-g-10 ui-l-10 ui-m-10 ui-s-10">
+              <button [disabled]="myForm.invalid" pButton style="width:100%;border-radius: 3px;" type="submit"
+                label="Login" class="ui-button-info"></button>
+            </div>
+
+            <div class="ui-g">
+
+              <div class="ui-g-12">
+                <p><a class="ui-button-warning mark" style="cursor: pointer" (click)="routeToForgetPassComponent()">Lost
+                    your password?</a></p>
+              </div>
+              <div class="ui-g-12">
+                <p><a>Don't have an account? Sign up now</a></p>
+              </div>
+
+
+
+            </div>
+
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </form>
 </div>
