@@ -82,8 +82,9 @@
 
           <div class="ui-g">
             <div class="ui-g-10 ui-lg-10 ui-md-10 ui-sm-10">
-              <input type="text" style="Width:100%; border:1px solid; border-radius: 3px;" size="30"
+              <input type="email" #e="ngModel" email style="Width:100%; border:1px solid; border-radius: 3px;" size="30"
                 placeholder="Enter Your Username or Email" required name="email" pInputText [(ngModel)]="email" />
+                <p class="alert alert-danger" style="margin:0px" *ngIf="e.errors && e.errors.email && e.touched">Email is invalid</p>
             </div>
 
           </div>
@@ -113,11 +114,11 @@
             <div class="ui-g">
 
               <div class="ui-g-12">
-                <p><a class="ui-button-warning mark" style="cursor: pointer" (click)="routeToForgetPassComponent()">Lost
-                    your password?</a></p>
+                <p><span class="ui-button-warning mark" style="cursor: pointer" (click)="routeToForgetPassComponent()">Lost
+                    your password?</span></p>
               </div>
               <div class="ui-g-12">
-                <p><a>Don't have an account? Sign up now</a></p>
+                <p><span class="ui-button-warning mark" style="cursor: pointer" (click)="routeToOnboarding()">Don't have an account? Sign up now</span></p>
               </div>
 
 

@@ -44,7 +44,7 @@ export class ChangpasswordComponent implements OnInit {
       this.showForm = true;
     },
       error => {
-      this.showForm = false
+      this.showForm = false;
       console.log(error)
     })
   }

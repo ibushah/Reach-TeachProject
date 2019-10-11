@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service'
 import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-forgotpassword',
@@ -9,7 +10,7 @@ import { MessageService } from 'primeng/api';
 })
 export class ForgotpasswordComponent implements OnInit {
 
-  constructor(private service: AuthService, private messageService: MessageService) { }
+  constructor(private service: AuthService, private messageService: MessageService, private route: Router) { }
 
   ngOnInit() {
   }
@@ -23,9 +24,12 @@ export class ForgotpasswordComponent implements OnInit {
 
       this.messageService.add({ severity: 'error', summary: 'Failed', detail: error.error });
     })
-
-
-
   }
 
+  routeToLogin() {
+    this.route.navigate(['login'])
+  }
+  routeToRegister() {
+    this.route.navigate(['register'])
+  }
 }

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-register-onboarding',
+  templateUrl: './register-onboarding.component.html',
+  styleUrls: ['./register-onboarding.component.css']
 })
-export class SignupComponent implements OnInit {
+export class RegisterOnboardingComponent implements OnInit {
 
   items2:Array<Object>=[];
   formShow:any = 1;
