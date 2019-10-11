@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   login(e) {
     sessionStorage.clear();
+    console.log(e)
     this.service.login(e.email, e.password).subscribe((res) => {
       console.log('token', res);
 
@@ -38,8 +39,11 @@ export class LoginComponent implements OnInit {
   }
 
   routeToForgetPassComponent() {
-
     this.route.navigate(['forgotpassword']);
+  }
+  routeToOnboarding()
+  {
+    this.route.navigate(['register']);
   }
 
 }

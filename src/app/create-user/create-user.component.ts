@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service'
 import { MessageService } from 'primeng/api';
-
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-user',
@@ -14,9 +14,11 @@ export class CreateUserComponent implements OnInit {
   email;
   value;
   display = false;
+
   constructor(private service: AuthService, private messageService: MessageService) { }
 
   ngOnInit() {
+   
   }
   showDialog() {
     this.display = true;

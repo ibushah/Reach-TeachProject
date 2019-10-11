@@ -29,6 +29,7 @@ import { AuthGuard } from './auth.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 
+import {MenuItem} from 'primeng/api';
 
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -36,6 +37,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FrontComponent } from './front/front.component';
 import { SignupComponent } from './signup/signup.component';
+import { OnboardingComponent } from './onboarding/onboarding.component';
+import { PlanComponent } from './onboarding/plan/plan.component';
+import { RegisterOnboardingComponent } from './register-onboarding/register-onboarding.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,10 @@ import { SignupComponent } from './signup/signup.component';
     NavbarComponent,
     FooterComponent,
     FrontComponent,
-    SignupComponent
+    SignupComponent,
+    OnboardingComponent,
+    PlanComponent,
+    RegisterOnboardingComponent
 
   ],
   imports: [

@@ -1,16 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Reach&Teach </a>
-    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+    <button style="cursor: pointer" class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
         [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
-        <ul class="navbar-nav mr-auto ">
-            <li class="nav-item active">
+    <div class="collapse navbar-collapse "  id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+        <ul class="navbar-nav  ml-auto">
+            <li class="nav-item active navbar-right">
                 <a class="nav-link" href="#">HOME </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a class="nav-link" href="#">PRODUCTS</a>
             </li>
             <li class="nav-item">
@@ -24,7 +24,7 @@
             </li>
 
             <li class="nav-item">
-                <button *ngIf="loginBtn" (click)="routeToLoginComponent()" style="margin: 5px;background-color: transparent;color: green;font-weight:600;" class="hoverrer ui-button-success" pButton type="button" label="LOG IN" ></button>
+                <button  *ngIf="loginBtn" (click)="routeToLoginComponent()" style="margin: 5px;background-color: transparent;color: green;font-weight:600;" class="hoverrer ui-button-success" pButton type="button" label="LOG IN" ></button>
             </li>
         </ul>
 
