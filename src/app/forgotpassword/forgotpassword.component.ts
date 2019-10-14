@@ -10,22 +10,36 @@ import { Router } from '@angular/router'
 })
 export class ForgotpasswordComponent implements OnInit {
 
+  email: String = "";
+  value: any = 0;
+  loader: Boolean = false;
+  displayMsg=false;
   constructor(private service: AuthService, private messageService: MessageService, private route: Router) { }
 
   ngOnInit() {
+    this.load()
   }
 
-  submit(e) {
-    this.service.forgotPassword(e).subscribe((response) => {
-
+  submit(form) {
+    this.loader = true;
+    this.service.resetPassword(this.email).subscribe((response) => {
+      this.loader = false;
+      this.displayMsg=true;
       this.messageService.add({ severity: 'info', summary: 'Successful', detail: response });
 
     }, (error) => {
-
+      this.loader = false;
       this.messageService.add({ severity: 'error', summary: 'Failed', detail: error.error });
     })
   }
 
+
+  load() {
+    setInterval(() => {
+      this.value = this.value + Math.floor(Math.random() * 10) + 1;
+
+    }, 2000);
+  }
   routeToLogin() {
     this.route.navigate(['login'])
   }

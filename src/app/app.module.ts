@@ -26,20 +26,18 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { ChangpasswordComponent } from './changpassword/changpassword.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { AuthGuard } from './auth.guard';
-import { CreateUserComponent } from './create-user/create-user.component';
-import { UpdateUserComponent } from './update-user/update-user.component';
 
-import {MenuItem} from 'primeng/api';
+
 
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FrontComponent } from './front/front.component';
-import { SignupComponent } from './signup/signup.component';
 import { OnboardingComponent } from './onboarding/onboarding.component';
 import { PlanComponent } from './onboarding/plan/plan.component';
 import { RegisterOnboardingComponent } from './register-onboarding/register-onboarding.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -47,15 +45,14 @@ import { RegisterOnboardingComponent } from './register-onboarding/register-onbo
     LoginComponent,
     ForgotpasswordComponent,
     ChangpasswordComponent,
-    CreateUserComponent,
-    UpdateUserComponent,
     NavbarComponent,
     FooterComponent,
     FrontComponent,
-    SignupComponent,
+
     OnboardingComponent,
     PlanComponent,
-    RegisterOnboardingComponent
+    RegisterOnboardingComponent,
+    ResetPasswordComponent
 
   ],
   imports: [

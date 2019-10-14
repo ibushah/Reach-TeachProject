@@ -1,211 +1,213 @@
 <div class="ui-g" style="margin-top: 60px;width: 100%">
-    <div class="ui-g-12">
-            <img style="margin-left:46%;width:70px" src="../../assets/reach.PNG">
-    </div>
+        <div class="ui-g-12">
+                <img style="margin-left:46%;width:70px" src="../../assets/reach.PNG">
+        </div>
 </div>
+
+
+
 <div class="ui-g">
-    <div class="ui-g-8 ui-g-offset-2">
-            <div style="width: 100%" class="ui-g">
-                    <div class="ui-g-12">
-                            <p-tabMenu style="pointer-events: none;border: hidden !important" styleClass="ui-g"
-                                    [style]="{borderStyle:'hidden',width:'100%'}" [model]="items2"
-                                    [activeItem]="activeItem" disabled>
+        <div class="ui-g-8 ui-g-offset-2">
+                <div style="width: 100%" class="ui-g">
+                        <div class="ui-g-12">
+                                <p-tabMenu style="pointer-events: none;border: hidden !important" styleClass="ui-g"
+                                        [style]="{borderStyle:'hidden',width:'100%'}" [model]="items2"
+                                        [activeItem]="activeItem" disabled>
 
-                                    <ng-template ng-disabled="all" class="ui-g-4" pTemplate="item" let-item
-                                            let-i="index">
+                                        <ng-template ng-disabled="all" class="ui-g-4" pTemplate="item" let-item
+                                                let-i="index">
 
-                                            <div style="pointer-events: none;" (click)="activateMenu(i+1)"
-                                                    style="width: 100%;height:100% !important;text-align: center; min-width: 8em;width: 255px">
-
-
-                                                    <div style="height: 100% !important" class="ui-g">
-                                                            <div class="ui-g-2">
-                                                                    <span *ngIf="active<=i+1"
-                                                                            style="font-weight:bold;color: black;font-size: 28px; ">{{i+1}}</span>
-                                                                    <span> <img *ngIf="active>i+1"
-                                                                                    style="width:34px"
-                                                                                    src="../../assets/check.png"></span>
-                                                            </div>
-                                                            <div class="ui-g-10">
-                                                                    <span
-                                                                            style="font-weight: bold">{{item.label}}</span>
-                                                                    <div>{{item.text}}</div>
-                                                            </div>
-                                                    </div>
+                                                <div style="pointer-events: none;" (click)="activateMenu(i+1)"
+                                                        style="width: 100%;height:100% !important;text-align: center; min-width: 8em;width: 255px">
 
 
-                                            </div>
-                                    </ng-template>
-
-                            </p-tabMenu>
-                    </div>
-            </div>
-
-
-            <!-- signup -->
-
-            <form #myForm="ngForm" (ngSubmit)="submit()" *ngIf="active==1" class="ui-g-12">
-                    <div class="ui-g">
-
-                            <div class="ui-lg-6 ui-md-12">
-                                    <div class="ui-g">
-                                            <div class="ui-lg-12 ui-md-12 ui-g-12">
-                                                    <p style="margin-bottom: -15px;"><b>First name</b></p>
-
-                                            </div>
-
-                                            <div class="ui-lg-12 ui-md-12 ui-g-12">
-                                                    <input type="text" required name="firstName" class="inputBox"
-                                                            placeholder="Enter Your Username or Email" pInputText
-                                                            [(ngModel)]="property" />
-
-                                            </div>
-                                            <div class="ui-lg-12 ui-md-12 ui-g-12">
-                                                    <p style="margin-bottom: -15px;"><b>Email</b></p>
-
-                                            </div>
-
-                                            <div class="ui-lg-12 ui-md-12 ui-g-12">
-                                                    <input type="text" required name="email" class="inputBox"
-                                                            placeholder="Enter Your Username or Email" pInputText
-                                                            email #e="ngModel" [(ngModel)]="property" />
-                                                    <p class="alert alert-danger"
-                                                            style="margin:0px !important;font-size:14px"
-                                                            *ngIf="e.errors && e.errors.email && e.touched">Email is
-                                                            invalid</p>
-                                            </div>
-                                            <div class="ui-lg-12 ui-md-12 ui-g-12">
-                                                    <p style="margin-bottom: -15px;"><b>Password</b></p>
-
-                                            </div>
-
-                                            <div class="ui-lg-12 ui-md-12 ui-g-12">
-                                                    <input type="text" required name="password" class="inputBox"
-                                                            placeholder="Enter Your Username or Email" pInputText
-                                                            [(ngModel)]="property" />
-                                            </div>
+                                                        <div style="height: 100% !important" class="ui-g">
+                                                                <div class="ui-g-2">
+                                                                        <span *ngIf="active<=i+1"
+                                                                                style="font-weight:bold;color: black;font-size: 28px; ">{{i+1}}</span>
+                                                                        <span> <img *ngIf="active>i+1"
+                                                                                        style="width:34px"
+                                                                                        src="../../assets/check.png"></span>
+                                                                </div>
+                                                                <div class="ui-g-10">
+                                                                        <span
+                                                                                style="font-weight: bold">{{item.label}}</span>
+                                                                        <div>{{item.text}}</div>
+                                                                </div>
+                                                        </div>
 
 
+                                                </div>
+                                        </ng-template>
 
-                                    </div>
+                                </p-tabMenu>
+                        </div>
+                </div>
 
 
-                            </div>
+                <!-- signup -->
+
+                <form #myForm="ngForm" (ngSubmit)="submit()" *ngIf="active==1" class="ui-g-12">
+                        <div class="ui-g">
+
+                                <div class="ui-lg-6 ui-md-12">
+                                        <div class="ui-g">
+                                                <div class="ui-lg-12 ui-md-12 ui-g-12">
+                                                        <p style="margin-bottom: -15px;"><b>First name</b></p>
+
+                                                </div>
+
+                                                <div class="ui-lg-12 ui-md-12 ui-g-12">
+                                                        <input type="text" required name="firstName" class="inputBox"
+                                                                placeholder="Enter Your Username or Email" pInputText
+                                                                [(ngModel)]="property" />
+
+                                                </div>
+                                                <div class="ui-lg-12 ui-md-12 ui-g-12">
+                                                        <p style="margin-bottom: -15px;"><b>Email</b></p>
+
+                                                </div>
+
+                                                <div class="ui-lg-12 ui-md-12 ui-g-12">
+                                                        <input type="text" required name="email" class="inputBox"
+                                                                placeholder="Enter Your Username or Email" pInputText
+                                                                email #e="ngModel" [(ngModel)]="property" />
+                                                        <p class="alert alert-danger"
+                                                                style="margin:0px !important;font-size:14px"
+                                                                *ngIf="e.errors && e.errors.email && e.touched">Email is
+                                                                invalid</p>
+                                                </div>
+                                                <div class="ui-lg-12 ui-md-12 ui-g-12">
+                                                        <p style="margin-bottom: -15px;"><b>Password</b></p>
+
+                                                </div>
+
+                                                <div class="ui-lg-12 ui-md-12 ui-g-12">
+                                                        <input type="text" required name="password" class="inputBox"
+                                                                placeholder="Enter Your Username or Email" pInputText
+                                                                [(ngModel)]="property" />
+                                                </div>
 
 
 
-                            <div class="ui-lg-6">
-                                    <div class="ui-g">
-                                            <div class="ui-g-12 ">
-                                                    <p style="margin-bottom: -15px;"><b>Last name</b></p>
-
-                                            </div>
-
-                                            <div class="ui-g-12 ui-lg-12 ">
-                                                    <input required type="text" name="lastName" class="inputBox"
-                                                            placeholder="Enter Your Username or Email" pInputText
-                                                            [(ngModel)]="property" />
-                                            </div>
-                                            <div class="ui-g-12">
-                                                    <p style="margin-bottom: -15px;"><b>Group name</b></p>
-
-                                            </div>
-
-                                            <div class="ui-g-12">
-                                                    <input type="text" required name="groupName" class="inputBox"
-                                                            placeholder="Enter Your Username or Email" pInputText
-                                                            [(ngModel)]="property" />
-                                            </div>
-
-                                    </div>
-
-                            </div>
-
-                            <div class="ui-g-12">
-                                    <div class="ui-g">
-                                            <div class="ui-g-12">
-                                                    <button [disabled]="myForm.invalid" pButton
-                                                            style="width:100%;border-radius: 3px;" type="submit"
-                                                            label="Continue to select your price plan"
-                                                            class="ui-button-info"></button>
-                                                    <p (click)="routeToLogin()"><span class="mark">Already have an
-                                                                    account? Login</span></p>
-                                            </div>
-                                    </div>
-                            </div>
-                    </div>
-            </form>
-
-            <!-- billing -->
-
-            <div *ngIf="active==3" class="ui-g">
-                    <div style="margin-top:10px;" class="ui-lg-6 ui-md-8 ui-md-offset-1 ui-sm-offset-1 ui-sm-10">
-                            <p-card>
-                                    <div class="ui-g">
-                                            <div class="ui-lg-12 ui-md-12 ui-sm-12">
-                                                    <p style="margin-bottom: -15px;"><b>Card Number</b></p>
-                                            </div>
-                                            <div class="ui-lg-12 ui-md-12 ui-sm-12">
-                                                    <input type="text"
-                                                            style="Width:100%;height:35px;border:1px solid;border-radius: 3px;text-indent:9px;"
-                                                            placeholder="Your Long card Number" pInputText
-                                                            [(ngModel)]="property" />
-                                            </div>
+                                        </div>
 
 
-                                    </div>
-                                    <div class="ui-g">
-                                            <div class="ui-lg-4 ui-md-6 ui-sm-12">
-                                                    <p><b>Expiry</b></p>
-                                                    <input type="text"
-                                                            style="Width:100%;height:35px;border:1px solid;border-radius: 3px;text-indent:9px;"
-                                                            placeholder="MM/YY" pInputText [(ngModel)]="property" />
-                                            </div>
-                                            <div class="ui-lg-4 ui-md-6 ui-sm-12">
-                                                    <p><b>CVC</b></p>
-                                                    <input type="text"
-                                                            style="Width:100%;height:35px;border:1px solid;border-radius: 3px;text-indent:9px;"
-                                                            placeholder="123" pInputText [(ngModel)]="property" />
-                                            </div>
-                                    </div>
-                                    <div class="ui-g">
-                                            <div class="ui-lg-12 ui-md-12 ui-sm-12">
-                                                    <button pButton style="width:100%;border-radius: 3px;"
-                                                            type="button" label="Continue and pay £450"
-                                                            class="ui-button-info"></button>
-                                            </div>
-                                    </div>
-                            </p-card>
-                    </div>
-                    <div class="ui-lg-offset-1 ui-lg-3 ui-md-offset-2 ui-md-6 ui-sm-offset-1 ui-sm-10">
-                            <app-plan plan="Pro"></app-plan>
-                    </div>
-
-            </div>
+                                </div>
 
 
-    </div>
+
+                                <div class="ui-lg-6">
+                                        <div class="ui-g">
+                                                <div class="ui-g-12 ">
+                                                        <p style="margin-bottom: -15px;"><b>Last name</b></p>
+
+                                                </div>
+
+                                                <div class="ui-g-12 ui-lg-12 ">
+                                                        <input required type="text" name="lastName" class="inputBox"
+                                                                placeholder="Enter Your Username or Email" pInputText
+                                                                [(ngModel)]="property" />
+                                                </div>
+                                                <div class="ui-g-12">
+                                                        <p style="margin-bottom: -15px;"><b>Group name</b></p>
+
+                                                </div>
+
+                                                <div class="ui-g-12">
+                                                        <input type="text" required name="groupName" class="inputBox"
+                                                                placeholder="Enter Your Username or Email" pInputText
+                                                                [(ngModel)]="property" />
+                                                </div>
+
+                                        </div>
+
+                                </div>
+
+                                <div class="ui-g-12">
+                                        <div class="ui-g">
+                                                <div class="ui-g-12">
+                                                        <button [disabled]="myForm.invalid" pButton
+                                                                style="width:100%;border-radius: 3px;" type="submit"
+                                                                label="Continue to select your price plan"
+                                                                class="ui-button-info"></button>
+                                                        <p (click)="routeToLogin()"><span class="mark">Already have an
+                                                                        account? Login</span></p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </form>
+
+                <!-- billing -->
+
+                <div *ngIf="active==3" class="ui-g">
+                        <div style="margin-top:10px;" class="ui-lg-6 ui-md-8 ui-md-offset-1 ui-sm-offset-1 ui-sm-10">
+                                <p-card>
+                                        <div class="ui-g">
+                                                <div class="ui-lg-12 ui-md-12 ui-sm-12">
+                                                        <p style="margin-bottom: -15px;"><b>Card Number</b></p>
+                                                </div>
+                                                <div class="ui-lg-12 ui-md-12 ui-sm-12">
+                                                        <input type="text"
+                                                                style="Width:100%;height:35px;border:1px solid;border-radius: 3px;text-indent:9px;"
+                                                                placeholder="Your Long card Number" pInputText
+                                                                [(ngModel)]="property" />
+                                                </div>
 
 
-    <!-- plans -->
+                                        </div>
+                                        <div class="ui-g">
+                                                <div class="ui-lg-4 ui-md-6 ui-sm-12">
+                                                        <p><b>Expiry</b></p>
+                                                        <input type="text"
+                                                                style="Width:100%;height:35px;border:1px solid;border-radius: 3px;text-indent:9px;"
+                                                                placeholder="MM/YY" pInputText [(ngModel)]="property" />
+                                                </div>
+                                                <div class="ui-lg-4 ui-md-6 ui-sm-12">
+                                                        <p><b>CVC</b></p>
+                                                        <input type="text"
+                                                                style="Width:100%;height:35px;border:1px solid;border-radius: 3px;text-indent:9px;"
+                                                                placeholder="123" pInputText [(ngModel)]="property" />
+                                                </div>
+                                        </div>
+                                        <div class="ui-g">
+                                                <div class="ui-lg-12 ui-md-12 ui-sm-12">
+                                                        <button pButton style="width:100%;border-radius: 3px;"
+                                                                type="button" label="Continue and pay £450"
+                                                                class="ui-button-info"></button>
+                                                </div>
+                                        </div>
+                                </p-card>
+                        </div>
+                        <div class="ui-lg-offset-1 ui-lg-3 ui-md-offset-2 ui-md-6 ui-sm-offset-1 ui-sm-10">
+                                <app-plan [plan]="selectedPlan"></app-plan>
+                        </div>
 
-    <div *ngIf="active==2" class="ui-g-12">
-            <div style="width: 100%;" class="ui-g">
-                    <div class="ui-g-3">
-                            <button class="unselected" [disabled]="true" pButton
-                                    style="border-radius: 0px !important;margin:2px" type="button"
-                                    label="6 months"></button>
-                            <button class="selected" pButton style="border-radius: 0px !important;margin:2px"
-                                    type="button" label="12 months"></button>
-                    </div>
-            </div>
-            <div style="width: 100%;" class="ui-g">
-                    <div *ngFor="let p of planners" class="ui-g-2 ui-lg-2 ui-md-3 ui-sm-6">
-                            <app-plan [plan]="p.plan" [charges]="p.charges" [users]="p.users"
-                                    [students]="p.students" (planEmitter)="planSelect($event)"></app-plan>
-                    </div>
-            </div>
-    </div>
+                </div>
+
+
+        </div>
+
+
+        <!-- plans -->
+
+        <div *ngIf="active==2" class="ui-g-12">
+                <div style="width: 100%;" class="ui-g">
+                        <div class="ui-g-3">
+                                <button class="unselected" [disabled]="true" pButton
+                                        style="border-radius: 0px !important;margin:2px" type="button"
+                                        label="6 months"></button>
+                                <button class="selected" pButton style="border-radius: 0px !important;margin:2px"
+                                        type="button" label="12 months"></button>
+                        </div>
+                </div>
+                <div style="width: 100%;" class="ui-g">
+                        <div *ngFor="let p of planners" class="ui-g-2 ui-lg-2 ui-md-3 ui-sm-6">
+                                <app-plan [plan]="p" (planEmitter)="planSelect($event)"></app-plan>
+                        </div>
+                </div>
+        </div>
 
 
 

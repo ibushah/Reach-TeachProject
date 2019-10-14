@@ -10,9 +10,6 @@ export class PlanComponent implements OnInit {
 
   colorStyler: Object;
   @Input() plan: any;
-  @Input() charges: String;
-  @Input() users: Number;
-  @Input() students: Number;
   @Output() planEmitter = new EventEmitter();
   bgColor = "blue";
 
@@ -28,37 +25,31 @@ export class PlanComponent implements OnInit {
       EnterPriseK: 'rgb(23, 130, 156)'
     }
 
-
   }
-
-
 
   ngOnInit() {
-
     this.bgColorSetter()
-
   }
-
 
 
   planClick(p) {
-
     this.planEmitter.emit(p);
   }
 
-  
   bgColorSetter() {
 
-    this.bgColor = this.colorStyler[this.plan] ? this.colorStyler[this.plan] : null;
-    if (!this.bgColor) {
-      if (this.plan == "Enterprise 1")
-        this.bgColor = this.colorStyler["EnterPriseI"]
-      else if (this.plan == "Enterprise 2")
-        this.bgColor = this.colorStyler["EnterPriseJ"]
-      else if (this.plan == "Enterprise 3")
-        this.bgColor = this.colorStyler["EnterPriseK"]
-      else
-        this.bgColor = 'blue'
+    if (this.plan) {
+      this.bgColor = this.colorStyler[this.plan.type] ? this.colorStyler[this.plan.type] : null;
+      if (!this.bgColor) {
+        if (this.plan.type == "Enterprise 1")
+          this.bgColor = this.colorStyler["EnterPriseI"]
+        else if (this.plan.type == "Enterprise 2")
+          this.bgColor = this.colorStyler["EnterPriseJ"]
+        else if (this.plan.type == "Enterprise 3")
+          this.bgColor = this.colorStyler["EnterPriseK"]
+        else
+          this.bgColor = 'blue'
+      }
     }
   }
 

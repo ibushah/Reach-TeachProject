@@ -11,17 +11,21 @@ export class RegisterOnboardingComponent implements OnInit {
   formShow:any = 1;
   activeItem: any;
   active:any=1;
+  selectedPlan:any;
+  planners:Array<Object>;
 
-  planners=[
-    {plan:'Basic',charges:45,users:1,students:5},
-    {plan:'Standard',charges:120,users:5,students:20},
-    {plan:'Pro',charges:450,users:20,students:100},
-    {plan:'Enterprise 1',charges:650,users:40,students:250},
-    {plan:'Enterprise 2',charges:1200,users:100,students:500},
-    {plan:'Enterprise 3',charges:2250,users:200,students:1000}
-
-  ]
-  constructor(private route:Router) { }
+ 
+  constructor(private route:Router) { 
+    this.planners=[
+      {type:'Basic',charges:45,users:1,students:5},
+      {type:'Standard',charges:120,users:5,students:20},
+      {type:'Pro',charges:450,users:20,students:100},
+      {type:'Enterprise 1',charges:650,users:40,students:250},
+      {type:'Enterprise 2',charges:1200,users:100,students:500},
+      {type:'Enterprise 3',charges:2250,users:200,students:1000}
+  
+    ]
+  }
 
   ngOnInit() {
     
@@ -37,7 +41,9 @@ export class RegisterOnboardingComponent implements OnInit {
     this.route.navigate(['login'])
   }
   planSelect(p)
-  { this.active=3;
+  { 
+    this.selectedPlan=p;
+    this.active=3;
     this.activeItem=this.items2[2]
   }
   

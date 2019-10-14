@@ -2,20 +2,18 @@
     <div  class="ui-g-12">
         <div class="card text-center">
             <div [style.background-color]="bgColor"  style="line-height:10px;color: white;font-weight:400;height:35px;" class="card-header">
-                {{plan}}
+                {{plan.type}}
             </div>
             <div style="padding:7px" class="card-body">
-                <h2 style="color: rgb(243, 29, 29);margin-top:0px !important;" class="card-title">{{charges}}$</h2>
+                <h2 style="color: rgb(243, 29, 29);margin-top:0px !important;" class="card-title">{{plan.charges}}$</h2>
                 <p style="color: red;margin: 0px;font-size:12px;" class="card-text">GBP / Year</p>
                 <p style="color: rgb(199, 189, 189);font-size:12px;" class="card-text">Build anually</p>
                 <hr />
-                <p style="font-size:14px;margin: 0px;font-weight:600;" class="card-text">{{users}} Users</p>
-                <p style="font-size:14px;font-weight:600;" class="card-text">{{students}} Students</p>
+                <p style="font-size:14px;margin: 0px;font-weight:600;" class="card-text">{{plan.users}} Users</p>
+                <p style="font-size:14px;font-weight:600;" class="card-text">{{plan.students}} Students</p>
                 <button (click)="planClick(plan)" style="width: 100%;cursor: pointer;"  class="btn btn-primary">GET STARTED</button>
             </div>
-            <!-- <div class="card-footer text-muted">
-                2 days ago
-            </div> -->
+           
         </div>
     </div>
 </div>
